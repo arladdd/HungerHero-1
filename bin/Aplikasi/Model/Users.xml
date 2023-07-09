@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users>
+              
+  
+  
+  
+  
+  
+  
+  <user>
+                            
+    
+    
+    
+    
+    
+    <name>Vladi</name>
+                            
+    
+    
+    
+    
+    
+    <email>v@gmail.com</email>
+                            
+    
+    
+    
+    
+    
+    <phoneNumber>08696969</phoneNumber>
+                            
+    
+    
+    
+    
+    
+    <password>012345</password>
+                          
+  
+  
+  
+  
+  
+  </user>
+            
+  
+  
+  
+  
+  
+  <user>
+                        
+    
+    
+    
+    
+    <name>Jundullah</name>
+                        
+    
+    
+    
+    
+    <email>jundul@gmail.com</email>
+                        
+    
+    
+    
+    
+    <phoneNumber>1234</phoneNumber>
+                        
+    
+    
+    
+    
+    <password>12345</password>
+                      
+  
+  
+  
+  
+  </user>
+          
+  
+  
+  
+  
+  <user>
+                    
+    
+    
+    
+    <name>jundi</name>
+                    
+    
+    
+    
+    <email>jundi@gmail.com</email>
+                    
+    
+    
+    
+    <phoneNumber>085158552222</phoneNumber>
+                    
+    
+    
+    
+    <password>jundi123</password>
+                  
+  
+  
+  
+  </user>
+        
+  
+  
+  
+  <user>
+                
+    
+    
+    <name>Vladimirrahman</name>
+                
+    
+    
+    <email>vladi@gmail.com</email>
+                
+    
+    
+    <phoneNumber>0823111</phoneNumber>
+                
+    
+    
+    <password>012345</password>
+                
+    
+    
+    <address>pakem</address>
+              
+  
+  
+  </user>
+      
+  
+  
+  <user>
+            
+    
+    <name>zahwa almira</name>
+            
+    
+    <email>uii@gmail.com</email>
+            
+    
+    <phoneNumber>0821110000</phoneNumber>
+            
+    
+    <password>bebas</password>
+            
+    
+    <address>jalan. kaliurang km 12.5</address>
+          
+  
+  </user>
+    
+  
+  <user>
+        
+    <name>1</name>
+        
+    <email>1</email>
+        
+    <phoneNumber>1</phoneNumber>
+        
+    <password>1</password>
+        
+    <address>1</address>
+      
+  </user>
+  
+  <user>
+    <name/>
+    <email/>
+    <phoneNumber/>
+    <password/>
+    <address/>
+  </user>
+</users>
