@@ -1,0 +1,26 @@
+.button {
+    -fx-background-color: #233555;
+    -fx-text-fill: black;
+    -fx-background-radius: 10em;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 0.7em 1.5em;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10em;
+    -fx-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-translate-y: -2px;
+    -fx-translate-x: -1px;
+    -fx-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.button:pressed {
+    -fx-translate-y: 1px;
+    -fx-translate-x: 0.5px;
+    -fx-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
