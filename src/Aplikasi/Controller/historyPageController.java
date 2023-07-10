@@ -237,6 +237,10 @@ public class historyPageController implements Initializable {
             for (int i = 0; i < historyList.getLength(); i++) {
                 Element historyElement = (Element) historyList.item(i);
 
+                // Get the ID attribute of the historyElement
+                // ini buat narik id dari historyElement
+                int id = Integer.parseInt(historyElement.getAttribute("id"));
+
                 // Extract data from XML elements
                 String foodItem = historyElement.getElementsByTagName("foodItem").item(0).getTextContent();
                 String date = historyElement.getElementsByTagName("donateDate").item(0).getTextContent();
@@ -244,7 +248,9 @@ public class historyPageController implements Initializable {
                 String amount = historyElement.getElementsByTagName("amountElement").item(0).getTextContent();
 
                 // Create a new MyData object and add it to the list
-                MyData data = new MyData(foodItem, date, unit, amount);
+                // MyData data = new MyData(foodItem, date, unit, amount) -> yg sebelumnya ga ada id;
+                MyData data = new MyData(id, foodItem, date, unit, amount);
+
                 dataList.add(data);
             }
 
@@ -257,86 +263,97 @@ public class historyPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    itemColumn.setCellValueFactory(cellData -> cellData.getValue().foodItemProperty());
-    dateColumn.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
-    unitColumn.setCellValueFactory(cellData -> cellData.getValue().unitProperty());
-    amountColumn.setCellValueFactory(cellData -> cellData.getValue().amountProperty());
+        itemColumn.setCellValueFactory(cellData -> cellData.getValue().foodItemProperty());
+        dateColumn.setCellValueFactory(cellData -> cellData.getValue().dateProperty());
+        unitColumn.setCellValueFactory(cellData -> cellData.getValue().unitProperty());
+        amountColumn.setCellValueFactory(cellData -> cellData.getValue().amountProperty());
 
-    // Populate the table with data from the XML file
-    loadXMLData();
-}
+        // Populate the table with data from the XML file
+        loadXMLData();
+    }
 
     @FXML
-public void editData(ActionEvent event) {
-    MyData selectedData = table.getSelectionModel().getSelectedItem();
-    if (selectedData != null) {
-        // Open a dialog or prompt for the user to input the edited food item
-        TextInputDialog dialog = new TextInputDialog(selectedData.getFoodItem());
-        dialog.setTitle("Edit Food Item");
-        dialog.setHeaderText(null);
-        dialog.setContentText("Enter the edited food item:");
-        Optional<String> result = dialog.showAndWait();
+    public void editData(ActionEvent event) {
+        MyData selectedData = table.getSelectionModel().getSelectedItem();
+        if (selectedData != null) {
+            // Open a dialog or prompt for the user to input the edited food item
+            TextInputDialog dialog = new TextInputDialog(selectedData.getFoodItem());
+            dialog.setTitle("Edit Food Item");
+            dialog.setHeaderText(null);
+            dialog.setContentText("Enter the edited food item:");
+            Optional<String> result = dialog.showAndWait();
 
-        // If the user entered a new food item, update the data in the table and XML file
-        result.ifPresent(newFoodItem -> {
-            selectedData.setFoodItem(newFoodItem);
-            updateDataInTable(selectedData);
-            updateDataInXML(selectedData);
-        });
-    }
-}
-
-private void updateDataInTable(MyData data) {
-    // Find the index of the selected item in the table and replace it with the updated data
-    int selectedIndex = table.getSelectionModel().getSelectedIndex();
-    table.getItems().set(selectedIndex, data);
-}
-
-private void updateDataInXML(MyData selectedData) {
-    try {
-        File file = new File("src/Aplikasi/Model/DonateHistory.xml");
-
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(file);
-        doc.getDocumentElement().normalize();
-
-        Element rootElement = doc.getDocumentElement();
-        NodeList historyList = rootElement.getElementsByTagName("History");
-
-        // Find the target entry based on its ID
-        for (int i = 0; i < historyList.getLength(); i++) {
-            Element historyElement = (Element) historyList.item(i);
-            int id = Integer.parseInt(historyElement.getAttribute("id"));
-
-            if (id == selectedData.getId()) {
-                // Update the existing entry
-                Element foodItemElement = (Element) historyElement.getElementsByTagName("foodItem").item(0);
-                Element amountElement = (Element) historyElement.getElementsByTagName("amountElement").item(0);
-                Element donateDateElement = (Element) historyElement.getElementsByTagName("donateDate").item(0);
-                Element pickUpElement = (Element) historyElement.getElementsByTagName("location").item(0);
-
-                foodItemElement.setTextContent(selectedData.getFoodItem());
-                amountElement.setTextContent(selectedData.getAmount());
-                donateDateElement.setTextContent(selectedData.getDate());
-                pickUpElement.setTextContent(selectedData.getUnit());
-
-                // Save the updated XML back to the file
-                TransformerFactory transformerFactory = TransformerFactory.newInstance();
-                Transformer transformer = transformerFactory.newTransformer();
-                transformer.setOutputProperty("indent", "yes");
-                transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-
-                DOMSource source = new DOMSource(doc);
-                StreamResult streamResult = new StreamResult(file);
-                transformer.transform(source, streamResult);
-
-                System.out.println("Data Updated in XML!");
-                break;
-            }
+            // If the user entered a new food item, update the data in the table and XML
+            // file
+            result.ifPresent(newFoodItem -> {
+                selectedData.setFoodItem(newFoodItem);
+                updateDataInTable(selectedData);
+                updateDataInXML(selectedData);
+            });
         }
-    } catch (Exception e) {
-        e.printStackTrace();
     }
-}
+
+    private void updateDataInTable(MyData data) {
+        // Find the index of the selected item in the table and replace it with the
+        // updated data
+        int selectedIndex = table.getSelectionModel().getSelectedIndex();
+        table.getItems().set(selectedIndex, data);
+    }
+
+    private void updateDataInXML(MyData selectedData) {
+        try {
+            File file = new File("src/Aplikasi/Model/DonateHistory.xml");
+
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(file);
+            doc.getDocumentElement().normalize();
+
+            NodeList historyList = doc.getElementsByTagName("History");
+
+            // Find the target entry based on its ID
+            for (int i = 0; i < historyList.getLength(); i++) {
+                Element historyElement = (Element) historyList.item(i);
+                int id = Integer.parseInt(historyElement.getAttribute("id"));
+
+                if (id == selectedData.getId()) {
+                    // Update the existing entry
+                    Element foodItemElement = (Element) historyElement.getElementsByTagName("foodItem").item(0);
+                    Element amountElement = (Element) historyElement.getElementsByTagName("amountElement").item(0);
+                    Element donateDateElement = (Element) historyElement.getElementsByTagName("donateDate").item(0);
+                    Element pickUpElement = (Element) historyElement.getElementsByTagName("location").item(0);
+
+                    // null check doang sih klo ga ada jg keknya ga masalah
+                    if (foodItemElement != null) {
+                        foodItemElement.setTextContent(selectedData.getFoodItem());
+                    }
+                    if (amountElement != null) {
+                        amountElement.setTextContent(selectedData.getAmount());
+                    }
+                    if (donateDateElement != null) {
+                        donateDateElement.setTextContent(selectedData.getDate());
+                    }
+                    if (pickUpElement != null) {
+                        pickUpElement.setTextContent(selectedData.getUnit());
+                    }
+
+                    // Save the updated XML back to the file
+                    TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                    Transformer transformer = transformerFactory.newTransformer();
+                    transformer.setOutputProperty("indent", "yes");
+                    transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+
+                    DOMSource source = new DOMSource(doc);
+                    StreamResult streamResult = new StreamResult(file);
+                    transformer.transform(source, streamResult);
+
+                    System.out.println("Data Updated in XML!");
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

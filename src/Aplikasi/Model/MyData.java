@@ -1,4 +1,5 @@
 package Aplikasi.Model;
+
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -12,11 +13,19 @@ public class MyData {
     private int id;
 
     public MyData(String foodItem, String date, String unit, String amount) {
-    this.foodItem = new SimpleStringProperty(foodItem);
-    this.date = new SimpleStringProperty(date);
-    this.unit = new SimpleStringProperty(unit);
-    this.amount = new SimpleStringProperty(amount);
-}
+        this.foodItem = new SimpleStringProperty(foodItem);
+        this.date = new SimpleStringProperty(date);
+        this.unit = new SimpleStringProperty(unit);
+        this.amount = new SimpleStringProperty(amount);
+    }
+    // ini aku override Mydata yg di atas tambahin id
+    public MyData(int id, String foodItem, String date, String unit, String amount) {
+        this.id = id;
+        this.foodItem = new SimpleStringProperty(foodItem);
+        this.date = new SimpleStringProperty(date);
+        this.unit = new SimpleStringProperty(unit);
+        this.amount = new SimpleStringProperty(amount);
+    }
 
     public String getFoodItem() {
         return foodItem.get();
@@ -59,31 +68,31 @@ public class MyData {
     }
 
     public StringProperty amountProperty() {
-    return amount;
-}
+        return amount;
+    }
 
-public String getAmount() {
-    return amount.get();
-}
+    public String getAmount() {
+        return amount.get();
+    }
 
-public StringProperty unitProperty() {
-    return unit;
-}
+    public StringProperty unitProperty() {
+        return unit;
+    }
 
-public String getUnit() {
-    return unit.get();
-}
+    public String getUnit() {
+        return unit.get();
+    }
 
-public String getPickUp() {
-    return pickUp.get();
-}
+    public String getPickUp() {
+        return pickUp.get();
+    }
 
-public void setPickUp(String pickUp) {
-    this.pickUp.set(pickUp);
-}
+    public void setPickUp(String pickUp) {
+        this.pickUp.set(pickUp);
+    }
 
-public StringProperty pickUpProperty() {
-    return pickUp;
-}
+    public StringProperty pickUpProperty() {
+        return pickUp;
+    }
 
 }
