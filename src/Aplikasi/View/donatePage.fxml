@@ -57,7 +57,7 @@
             <TextField fx:id="FoodItem" layoutX="45.0" layoutY="155.0" prefHeight="30.0" prefWidth="160.0" />
             <DatePicker fx:id="calDonateDate" layoutX="46.0" layoutY="322.0" />
          </children></AnchorPane>
-      <Button fx:id="profileButton" layoutX="8.0" layoutY="14.0" mnemonicParsing="false" onAction="#navigatetoprofileScreen" style="-fx-background-color: transparent;">
+      <Button fx:id="profileButton" layoutX="10.0" layoutY="41.0" mnemonicParsing="false" onAction="#navigatetoprofileScreen" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -65,20 +65,21 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button fx:id="btHome" layoutX="16.0" layoutY="130.0" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-color: transparent;">
+      <Button fx:id="btHome" layoutX="5.0" layoutY="134.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="36.0" prefWidth="66.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" layoutX="27.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../image/home-3.png" />
                </image>
             </ImageView>
-         </graphic></Button>
-      <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" layoutX="27.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         </graphic>
+      </Button>
+      <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" layoutX="26.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/donate.png" />
          </image>
       </ImageView>
-      <Button fx:id="btExit" layoutX="18.0" layoutY="515.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btExit" layoutX="11.0" layoutY="515.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -87,7 +88,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btHistory" layoutX="12.0" layoutY="336.0" mnemonicParsing="false" onAction="#goToHistory" prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+      <Button fx:id="btHistory" layoutX="9.0" layoutY="316.0" mnemonicParsing="false" onAction="#goToHistory" prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
