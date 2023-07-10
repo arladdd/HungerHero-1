@@ -14,7 +14,6 @@
   
   
   
-  
   <History id="0">
                                                             
     
@@ -30,7 +29,7 @@
     
     
     
-    <foodItem>20</foodItem>
+    <foodItem>zahwa123</foodItem>
                                                             
     
     
@@ -60,7 +59,7 @@
     
     
     
-    <donateDate>2023-07-11</donateDate>
+    <donateDate>2023-07-13</donateDate>
                                                             
     
     
@@ -92,8 +91,8 @@
   
   </History>
                             
-
-
+  
+  
   
   
   
@@ -106,7 +105,7 @@
   
   
   <History id="1">
-                                                
+                                                        
     
     
     
@@ -117,8 +116,12 @@
     
     
     
-    <foodItem>120</foodItem>
-                                                
+    
+    
+    <foodItem>tes1234</foodItem>
+                                                        
+    
+    
     
     
     
@@ -130,7 +133,7 @@
     
     
     <amountElement>1</amountElement>
-                                                
+                                                        
     
     
     
@@ -141,8 +144,12 @@
     
     
     
-    <donateDate>2023-07-11</donateDate>
-                                                
+    
+    
+    <donateDate>2023-07-13</donateDate>
+                                                        
+    
+    
     
     
     
@@ -154,7 +161,9 @@
     
     
     <location>jakal</location>
-                                              
+                                                      
+  
+  
   
   
   
@@ -166,7 +175,9 @@
   
   
   </History>
-                      
+                          
+
+
 
 
 
