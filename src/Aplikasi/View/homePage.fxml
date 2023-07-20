@@ -10,16 +10,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #213555;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aplikasi.Controller.homePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #213555;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aplikasi.Controller.homePageController">
     <children>
-        <AnchorPane fx:id="tableview" layoutX="73.0" prefHeight="600.0" prefWidth="723.0" style="-fx-background-color: white; -fx-background-radius: 15px 0 0 15px;">
+        <AnchorPane fx:id="tableview" layoutX="73.0" prefHeight="1080.0" prefWidth="1852.0" style="-fx-background-color: white; -fx-background-radius: 15px 0 0 15px;">
             <children>
-                <Text layoutX="31.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Impact" wrappingWidth="195.0550765991211">
+                <Text layoutX="89.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Impact" wrappingWidth="281.7217330932617">
                     <font>
-                        <Font size="32.0" />
+                        <Font name="System Bold" size="48.0" />
                     </font>
                 </Text>
-                <BarChart fx:id="bcFood" layoutX="82.0" layoutY="185.0" prefHeight="369.0" prefWidth="536.0">
+                <BarChart fx:id="bcFood" layoutX="77.0" layoutY="267.0" prefHeight="329.0" prefWidth="1010.0">
                     <xAxis>
                         <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -28,7 +28,7 @@
                     </yAxis>
                 </BarChart>
 
-                <Text fontSmoothingType="LCD" layoutX="34.0" layoutY="85.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="There are 828 million hungry people in the world. But hunger is entirely solvable. Every day, people around the world are sharing their meal, and the United Nations World Food Programme is on the frontlines ensuring it reaches those most in need. Imagine the collective impact we could have if we all shared the meal." textAlignment="JUSTIFY" wrappingWidth="632.2443237304688">
+                <Text fontSmoothingType="LCD" layoutX="94.0" layoutY="154.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="There are 828 million hungry people in the world. But hunger is entirely solvable. Every day, people around the world are sharing their meal, and the United Nations World Food Programme is on the frontlines ensuring it reaches those most in need. Imagine the collective impact we could have if we all shared the meal." textAlignment="JUSTIFY" wrappingWidth="844.2443237304688">
                     <font>
                         <Font size="14.0" />
                     </font>

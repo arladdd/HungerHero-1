@@ -9,30 +9,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #213555;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aplikasi.Controller.historyPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #213555;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Aplikasi.Controller.historyPageController">
    <children>
-      <AnchorPane layoutX="73.0" prefHeight="600.0" prefWidth="728.0" style="-fx-background-color: white; -fx-background-radius: 15px 0 0 15px;">
+      <AnchorPane layoutX="73.0" prefHeight="1920.0" prefWidth="1852.0" style="-fx-background-color: white; -fx-background-radius: 15px 0 0 15px;">
          <children>
-            <Label layoutX="42.0" layoutY="48.0" prefHeight="41.0" prefWidth="241.0" text="Track your donation" textFill="#434343">
+            <Label layoutX="42.0" layoutY="48.0" prefHeight="53.0" prefWidth="367.0" text="Track your donation" textFill="#434343">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <Label layoutX="45.0" layoutY="88.0" text="A History of Impactful Donations">
+            <Label layoutX="51.0" layoutY="106.0" text="A History of Impactful Donations">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <TableView fx:id="table" layoutX="38.0" layoutY="108.0" prefHeight="441.0" prefWidth="656.0">
+            <TableView fx:id="table" layoutX="47.0" layoutY="150.0" prefHeight="422.0" prefWidth="1169.0">
               <columns>
-                <TableColumn fx:id="dateColumn" prefWidth="158.5" text="Date" />
-                <TableColumn fx:id="itemColumn" prefWidth="170.5" text="Item" />
-                  <TableColumn fx:id="amountColumn" prefWidth="171.38970947265625" text="Amount" />
-                  <TableColumn fx:id="unitColumn" prefWidth="167.33200073242188" text="location" />
+                <TableColumn fx:id="dateColumn" prefWidth="253.0" text="Date" />
+                <TableColumn fx:id="itemColumn" prefWidth="286.0" text="Item" />
+                  <TableColumn fx:id="amountColumn" prefWidth="324.0" text="Amount" />
+                  <TableColumn fx:id="unitColumn" minWidth="2.66668701171875" prefWidth="305.0" text="location" />
               </columns>
             </TableView>
-            <Button layoutX="345.0" layoutY="551.0" minHeight="28.0" minWidth="87.0" mnemonicParsing="false" onAction="#clearData" prefHeight="28.0" prefWidth="189.0" style="-fx-background-color: #213555;" text="clearData" textFill="#eae8e8" />
-            <Button fx:id="btEdit" layoutX="132.0" layoutY="551.0" mnemonicParsing="false" onAction="#editData" prefHeight="28.0" prefWidth="180.0" style="-fx-background-color: #213555;" text="Edit" textFill="#dfd6d6" />
+            <Button layoutX="1031.0" layoutY="630.0" minHeight="28.0" minWidth="87.0" mnemonicParsing="false" onAction="#clearData" prefHeight="40.0" prefWidth="189.0" style="-fx-background-color: #213555; -fx-background-radius: 9px;" text="Clear Data" textFill="#eae8e8" />
+            <Button fx:id="btEdit" layoutX="823.0" layoutY="631.0" mnemonicParsing="false" onAction="#editData" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #213555; -fx-background-radius: 9px;" text="Edit" textFill="#dfd6d6" />
          </children>
       </AnchorPane>
       <Button fx:id="DonationButton" layoutX="10.0" layoutY="232.0" minHeight="28.0" mnemonicParsing="false" onAction="#Donation" prefWidth="51.0" style="-fx-background-color: transparent;">

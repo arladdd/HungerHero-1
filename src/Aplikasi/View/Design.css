@@ -7,13 +7,9 @@
 
 .button:hover {
     -fx-background-color: black;
-    -fx-translate-y: -2px;
-    -fx-translate-x: -1px;
     -fx-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .button:pressed {
-    -fx-translate-y: 1px;
-    -fx-translate-x: 0.5px;
     -fx-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
